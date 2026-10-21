@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_NOLOGO: "true"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+  # Tests that need the WebView2 runtime and an interactive desktop are skipped on CI
+  # (they are covered on developer machines). Live/network tests are skipped by default
+  # (they only run with RUSTDROPER_LIVE=1, which CI never sets).
+  RUSTDROPER_SKIP_WEBVIEW2: "1"
+
+jobs:
+  build-test:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore RustDroper.slnx
+
+      - name: Build (warnings are errors)
+        run: dotnet build RustDroper.slnx -c Release --no-restore
+
+      - name: Test - Core
+        run: dotnet test tests/RustDroper.Core.Tests/RustDroper.Core.Tests.csproj -c Release --no-build --logger "trx;LogFileName=core.trx"
+
+      - name: Test - App (WPF view-models, UI polish)
+        run: dotnet test tests/RustDroper.App.Tests/RustDroper.App.Tests.csproj -c Release --no-build --logger "trx;LogFileName=app.trx"
+
+      - name: Changelog markdown is in sync with changelog.json
+        run: powershell -NoProfile -File build\changelog.ps1 -Check
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: "**/TestResults/*.trx"
+          if-no-files-found: ignore

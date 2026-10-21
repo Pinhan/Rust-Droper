@@ -1,0 +1,232 @@
+{
+    "game":  {
+                 "id":  "1264310518",
+                 "name":  "Marvel Rivals",
+                 "displayName":  "Marvel Rivals",
+                 "streams":  {
+                                 "banners":  null,
+                                 "edges":  [
+                                               {
+                                                   "cursor":  "eyJvZmYiOjEsImJsayI6Miwic3ViIjp7IjEiOnsib2ZmIjoyLCJ0b3QiOjk4fSwiMiI6eyJvZmYiOjAsInRvdCI6MTc4fSwiMyI6eyJvZmYiOjAsInRvdCI6MH19fQ==",
+                                                   "node":  {
+                                                                "id":  "320668884958",
+                                                                "title":  "[NEW DROPS] MRI WATCH PARTY - DAY 1 OF PLAYOFFS | Follow socials --\u003e @jay3",
+                                                                "viewersCount":  2553,
+                                                                "previewImageURL":  "https://static-cdn.jtvnw.net/previews-ttv/live_user_jay3-640x360.jpg",
+                                                                "verticalPreviewImageURL":  "https://static-cdn.jtvnw.net/previews-ttv/live_user_jay3-360x640.jpg",
+                                                                "height":  1440,
+                                                                "width":  2560,
+                                                                "isDualFormat":  false,
+                                                                "broadcaster":  {
+                                                                                    "id":  "133220545",
+                                                                                    "login":  "jay3",
+                                                                                    "displayName":  "Jay3",
+                                                                                    "roles":  {
+                                                                                                  "isPartner":  true,
+                                                                                                  "isParticipatingDJ":  false,
+                                                                                                  "__typename":  "UserRoles"
+                                                                                              },
+                                                                                    "profileImageURL":  "https://static-cdn.jtvnw.net/jtv_user_pictures/33a9792d-d9a8-4cc8-ac97-a4b849f39003-profile_image-50x50.jpg",
+                                                                                    "primaryColorHex":  "00FAFA",
+                                                                                    "__typename":  "User"
+                                                                                },
+                                                                "freeformTags":  [
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:133220545:0",
+                                                                                         "name":  "English",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:133220545:1",
+                                                                                         "name":  "DropsEnabled",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     }
+                                                                                 ],
+                                                                "curatedTags":  null,
+                                                                "type":  "live",
+                                                                "game":  {
+                                                                             "id":  "1264310518",
+                                                                             "boxArtURL":  "https://static-cdn.jtvnw.net/ttv-boxart/1264310518_IGDB-40x56.jpg",
+                                                                             "name":  "Marvel Rivals",
+                                                                             "displayName":  "Marvel Rivals",
+                                                                             "slug":  "marvel-rivals",
+                                                                             "__typename":  "Game"
+                                                                         },
+                                                                "previewThumbnailProperties":  {
+                                                                                                   "blurReason":  "BLUR_NOT_REQUIRED",
+                                                                                                   "__typename":  "PreviewThumbnailProperties"
+                                                                                               },
+                                                                "contentClassificationLabels":  [
+
+                                                                                                ],
+                                                                "__typename":  "Stream"
+                                                            },
+                                                   "trackingID":  "9671597e-ed90-4632-a90f-3d769d97014d:96a0f199-99ab-4329-bec2-c247d04e3f24:MF|KERMIE_TF2_008:RF|RANKER_DR_MMOE_50_BF_BASECG:CG|UNK:CR|UNK:BL|UNK:FC|UNK:RK|1:CRK|1",
+                                                   "__typename":  "StreamEdge"
+                                               },
+                                               {
+                                                   "cursor":  "eyJvZmYiOjIsImJsayI6Miwic3ViIjp7IjEiOnsib2ZmIjozLCJ0b3QiOjk4fSwiMiI6eyJvZmYiOjAsInRvdCI6MTc4fSwiMyI6eyJvZmYiOjAsInRvdCI6MH19fQ==",
+                                                   "node":  {
+                                                                "id":  "318005154274",
+                                                                "title":  "ANGELA DROPS | Hum...Hum...I\u0027M BAAAAAAAAAAAACK !! (c\u0027est la reprise donc doucement)",
+                                                                "viewersCount":  18,
+                                                                "previewImageURL":  "https://static-cdn.jtvnw.net/previews-ttv/live_user_lilshark4r-640x360.jpg",
+                                                                "verticalPreviewImageURL":  "https://static-cdn.jtvnw.net/previews-ttv/live_user_lilshark4r-360x640.jpg",
+                                                                "height":  1080,
+                                                                "width":  1920,
+                                                                "isDualFormat":  false,
+                                                                "broadcaster":  {
+                                                                                    "id":  "1362574163",
+                                                                                    "login":  "lilshark4r",
+                                                                                    "displayName":  "LilShark4R",
+                                                                                    "roles":  {
+                                                                                                  "isPartner":  false,
+                                                                                                  "isParticipatingDJ":  false,
+                                                                                                  "__typename":  "UserRoles"
+                                                                                              },
+                                                                                    "profileImageURL":  "https://static-cdn.jtvnw.net/jtv_user_pictures/fd43ba4b-6e28-4ad6-a815-84cd59055598-profile_image-50x50.png",
+                                                                                    "primaryColorHex":  "00F0F0",
+                                                                                    "__typename":  "User"
+                                                                                },
+                                                                "freeformTags":  [
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:0",
+                                                                                         "name":  "English",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:1",
+                                                                                         "name":  "Français",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:2",
+                                                                                         "name":  "marvelrivalsgameplay",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:3",
+                                                                                         "name":  "marvelrivalsranked",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:4",
+                                                                                         "name":  "eldenringgameplay",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:5",
+                                                                                         "name":  "eldenring",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:1362574163:6",
+                                                                                         "name":  "DropsActivés",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     }
+                                                                                 ],
+                                                                "curatedTags":  null,
+                                                                "type":  "live",
+                                                                "game":  {
+                                                                             "id":  "1264310518",
+                                                                             "boxArtURL":  "https://static-cdn.jtvnw.net/ttv-boxart/1264310518_IGDB-40x56.jpg",
+                                                                             "name":  "Marvel Rivals",
+                                                                             "displayName":  "Marvel Rivals",
+                                                                             "slug":  "marvel-rivals",
+                                                                             "__typename":  "Game"
+                                                                         },
+                                                                "previewThumbnailProperties":  {
+                                                                                                   "blurReason":  "BLUR_NOT_REQUIRED",
+                                                                                                   "__typename":  "PreviewThumbnailProperties"
+                                                                                               },
+                                                                "contentClassificationLabels":  [
+
+                                                                                                ],
+                                                                "__typename":  "Stream"
+                                                            },
+                                                   "trackingID":  "9671597e-ed90-4632-a90f-3d769d97014d:e9eb40fe-d323-4fdb-bd1b-04bc212acb6d:MF|KERMIE_TF2_008:RF|RANKER_DR_MMOE_50_BF_BASECG:CG|UNK:CR|UNK:BL|UNK:FC|UNK:RK|2:CRK|2",
+                                                   "__typename":  "StreamEdge"
+                                               },
+                                               {
+                                                   "cursor":  "eyJvZmYiOjMsImJsayI6Miwic3ViIjp7IjEiOnsib2ZmIjo0LCJ0b3QiOjk4fSwiMiI6eyJvZmYiOjAsInRvdCI6MTc4fSwiMyI6eyJvZmYiOjAsInRvdCI6MH19fQ==",
+                                                   "node":  {
+                                                                "id":  "318816281703",
+                                                                "title":  "!DROPS 🔥IGNITE WATCHPARTY 🔥SUPPORTING NECROS 🔥",
+                                                                "viewersCount":  903,
+                                                                "previewImageURL":  "https://static-cdn.jtvnw.net/previews-ttv/live_user_bogur-640x360.jpg",
+                                                                "verticalPreviewImageURL":  "https://static-cdn.jtvnw.net/previews-ttv/live_user_bogur-360x640.jpg",
+                                                                "height":  1440,
+                                                                "width":  2560,
+                                                                "isDualFormat":  false,
+                                                                "broadcaster":  {
+                                                                                    "id":  "80093668",
+                                                                                    "login":  "bogur",
+                                                                                    "displayName":  "bogur",
+                                                                                    "roles":  {
+                                                                                                  "isPartner":  true,
+                                                                                                  "isParticipatingDJ":  false,
+                                                                                                  "__typename":  "UserRoles"
+                                                                                              },
+                                                                                    "profileImageURL":  "https://static-cdn.jtvnw.net/jtv_user_pictures/327bfaa6-68b5-40a5-9302-a9cb4393dfbf-profile_image-50x50.png",
+                                                                                    "primaryColorHex":  "5C5FFF",
+                                                                                    "__typename":  "User"
+                                                                                },
+                                                                "freeformTags":  [
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:80093668:0",
+                                                                                         "name":  "English",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:80093668:1",
+                                                                                         "name":  "tank",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:80093668:2",
+                                                                                         "name":  "silly",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:80093668:3",
+                                                                                         "name":  "bulgarian",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     },
+                                                                                     {
+                                                                                         "id":  "fft:CHANNEL:80093668:4",
+                                                                                         "name":  "DropsEnabled",
+                                                                                         "__typename":  "FreeformTag"
+                                                                                     }
+                                                                                 ],
+                                                                "curatedTags":  null,
+                                                                "type":  "live",
+                                                                "game":  {
+                                                                             "id":  "1264310518",
+                                                                             "boxArtURL":  "https://static-cdn.jtvnw.net/ttv-boxart/1264310518_IGDB-40x56.jpg",
+                                                                             "name":  "Marvel Rivals",
+                                                                             "displayName":  "Marvel Rivals",
+                                                                             "slug":  "marvel-rivals",
+                                                                             "__typename":  "Game"
+                                                                         },
+                                                                "previewThumbnailProperties":  {
+                                                                                                   "blurReason":  "BLUR_NOT_REQUIRED",
+                                                                                                   "__typename":  "PreviewThumbnailProperties"
+                                                                                               },
+                                                                "contentClassificationLabels":  [
+
+                                                                                                ],
+                                                                "__typename":  "Stream"
+                                                            },
+                                                   "trackingID":  "9671597e-ed90-4632-a90f-3d769d97014d:ea199cf7-8519-45ae-bc56-fd2759cf454d:MF|KERMIE_TF2_008:RF|RANKER_DR_MMOE_50_BF_BASECG:CG|UNK:CR|UNK:BL|UNK:FC|UNK:RK|3:CRK|5",
+                                                   "__typename":  "StreamEdge"
+                                               }
+                                           ],
+                                 "pageInfo":  {
+                                                  "hasNextPage":  true,
+                                                  "__typename":  "PageInfo"
+                                              },
+                                 "__typename":  "StreamConnection"
+                             },
+                 "__typename":  "Game"
+             }
+}

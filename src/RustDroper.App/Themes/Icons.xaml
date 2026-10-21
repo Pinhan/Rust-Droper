@@ -1,0 +1,81 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:views="clr-namespace:RustDroper.App.Views">
+
+    <!-- Kendi çizdiğimiz 24x24 ikonlar (çizgi tabanlı; resmî logo/ek paket yok). Twitch/Kick işaretleri basit, özgün çizimlerdir. -->
+    <Geometry x:Key="IconInfo">M12,2 A10,10 0 1 1 12,22 A10,10 0 1 1 12,2 Z M12,16 V11 M12,8 H12.01</Geometry>
+    <Geometry x:Key="IconPlay">M6,3 L19,12 L6,21 Z</Geometry>
+    <Geometry x:Key="IconPause">M6,4 H10 V20 H6 Z M14,4 H18 V20 H14 Z</Geometry>
+    <Geometry x:Key="IconRefresh">M23,4 V10 H17 M1,20 V14 H7 M3.5,9 A9,9 0 0 1 18.4,5.6 L23,10 M1,14 L5.6,18.4 A9,9 0 0 0 20.5,15</Geometry>
+    <Geometry x:Key="IconSliders">M4,21 V14 M4,10 V3 M12,21 V12 M12,8 V3 M20,21 V16 M20,12 V3 M1,14 H7 M9,8 H15 M17,16 H23</Geometry>
+    <Geometry x:Key="IconBack">M19,12 H5 M12,19 L5,12 L12,5</Geometry>
+    <Geometry x:Key="IconCheck">M20,6 L9,17 L4,12</Geometry>
+    <Geometry x:Key="IconLogIn">M15,3 H19 A2,2 0 0 1 21,5 V19 A2,2 0 0 1 19,21 H15 M10,17 L15,12 L10,7 M15,12 H3</Geometry>
+    <Geometry x:Key="IconLogOut">M9,21 H5 A2,2 0 0 1 3,19 V5 A2,2 0 0 1 5,3 H9 M16,17 L21,12 L16,7 M21,12 H9</Geometry>
+    <Geometry x:Key="IconExternal">M18,13 V19 A2,2 0 0 1 16,21 H5 A2,2 0 0 1 3,19 V8 A2,2 0 0 1 5,6 H11 M15,3 H21 V9 M10,14 L21,3</Geometry>
+    <Geometry x:Key="IconCopy">M11,9 H20 A2,2 0 0 1 22,11 V20 A2,2 0 0 1 20,22 H11 A2,2 0 0 1 9,20 V11 A2,2 0 0 1 11,9 Z M5,15 H4 A2,2 0 0 1 2,13 V4 A2,2 0 0 1 4,2 H13 A2,2 0 0 1 15,4 V5</Geometry>
+    <Geometry x:Key="IconAlert">M10.3,3.9 L1.8,18 A2,2 0 0 0 3.5,21 H20.5 A2,2 0 0 0 22.2,18 L13.7,3.9 A2,2 0 0 0 10.3,3.9 Z M12,9 V13 M12,17 H12.01</Geometry>
+    <Geometry x:Key="IconGift">M20,12 V22 H4 V12 M2,7 H22 V12 H2 Z M12,22 V7 M12,7 H7.5 A2.5,2.5 0 0 1 7.5,2 C11,2 12,7 12,7 Z M12,7 H16.5 A2.5,2.5 0 0 0 16.5,2 C13,2 12,7 12,7 Z</Geometry>
+    <Geometry x:Key="IconList">M8,6 H21 M8,12 H21 M8,18 H21 M3,6 H3.01 M3,12 H3.01 M3,18 H3.01</Geometry>
+    <Geometry x:Key="IconActivity">M22,12 H18 L15,21 L9,3 L6,12 H2</Geometry>
+    <Geometry x:Key="IconAward">M12,1 A7,7 0 1 1 12,15 A7,7 0 1 1 12,1 Z M8.2,13.9 L7,23 L12,20 L17,23 L15.8,13.9</Geometry>
+    <Geometry x:Key="IconUser">M20,21 V19 A4,4 0 0 0 16,15 H8 A4,4 0 0 0 4,19 V21 M12,3 A4,4 0 1 1 12,11 A4,4 0 1 1 12,3 Z</Geometry>
+    <Geometry x:Key="IconClose">M18,6 L6,18 M6,6 L18,18</Geometry>
+    <Geometry x:Key="IconPlayCircle">M12,2 A10,10 0 1 1 12,22 A10,10 0 1 1 12,2 Z M10,8 L16,12 L10,16 Z</Geometry>
+    <Geometry x:Key="IconGlobe">M12,2 A10,10 0 1 1 12,22 A10,10 0 1 1 12,2 Z M2,12 H22 M12,2 A15.3,15.3 0 0 1 16,12 A15.3,15.3 0 0 1 12,22 A15.3,15.3 0 0 1 8,12 A15.3,15.3 0 0 1 12,2 Z</Geometry>
+    <Geometry x:Key="IconLock">M5,11 H19 A2,2 0 0 1 21,13 V20 A2,2 0 0 1 19,22 H5 A2,2 0 0 1 3,20 V13 A2,2 0 0 1 5,11 Z M7,11 V7 A5,5 0 0 1 17,7 V11</Geometry>
+    <Geometry x:Key="IconClock">M12,2 A10,10 0 1 1 12,22 A10,10 0 1 1 12,2 Z M12,6 V12 L16,14</Geometry>
+    <Geometry x:Key="IconDrop">M12,2.7 L17.7,8.4 A8,8 0 1 1 6.3,8.4 Z</Geometry>
+    <!-- Dolgu ikonları (marka işaretleri; EvenOdd ile delikli) -->
+    <Geometry x:Key="IconTwitch">F0 M4,3 H21 V14 L16,19 H12 L9,22 V19 H4 Z M11,7 H13 V12 H11 Z M16,7 H18 V12 H16 Z</Geometry>
+    <Geometry x:Key="IconKick">M4,3 H9 V9.5 H11 L15,3 H21 L15.5,11.5 L21,21 H15 L11,14.5 H9 V21 H4 Z</Geometry>
+
+    <Style TargetType="views:Icon">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Height" Value="16" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="views:Icon">
+                    <Viewbox Stretch="Uniform">
+                        <Canvas Width="24" Height="24">
+                            <Path x:Name="Glyph" Data="{TemplateBinding Data}" Stroke="{TemplateBinding Foreground}" Fill="Transparent"
+                                  StrokeThickness="{TemplateBinding StrokeThickness}" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                        </Canvas>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFilled" Value="True">
+                            <Setter TargetName="Glyph" Property="Fill" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="Glyph" Property="StrokeThickness" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Güncelleme notları sayfası: geçmiş düğmesi ve bölüm ikonları (eklenen / değişen / düzeltilen / kaldırılan) -->
+    <Geometry x:Key="IconHistory">M3,12 A9,9 0 1 0 6,5.3 L3,8 M3,3 V8 H8 M12,7 V12 L15,14</Geometry>
+    <Geometry x:Key="IconPlusCircle">M12,2 A10,10 0 1 1 12,22 A10,10 0 1 1 12,2 Z M12,8 V16 M8,12 H16</Geometry>
+    <Geometry x:Key="IconEdit">M12,20 H21 M16.5,3.5 A2.1,2.1 0 0 1 19.5,6.5 L7,19 L3,20 L4,16 Z</Geometry>
+    <Geometry x:Key="IconMinusCircle">M12,2 A10,10 0 1 1 12,22 A10,10 0 1 1 12,2 Z M8,12 H16</Geometry>
+
+    <!-- Bölüm başlığı ikonu: platform vurgusunda -->
+    <Style x:Key="SectionIcon" TargetType="views:Icon" BasedOn="{StaticResource {x:Type views:Icon}}">
+        <Setter Property="Foreground" Value="{DynamicResource PlatformAccentBrush}" />
+        <Setter Property="Width" Value="14" />
+        <Setter Property="Height" Value="14" />
+        <Setter Property="Margin" Value="2,0,8,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- Düğme içindeki ikon: düğmenin ön plan rengini izler -->
+    <Style x:Key="BtnIcon" TargetType="views:Icon" BasedOn="{StaticResource {x:Type views:Icon}}">
+        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+        <Setter Property="Margin" Value="0,0,7,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+</ResourceDictionary>

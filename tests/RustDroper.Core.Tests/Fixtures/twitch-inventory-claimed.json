@@ -1,0 +1,100 @@
+{
+    "currentUser":  {
+                        "id":  "1000",
+                        "inventory":  {
+                                          "dropCampaignsInProgress":  null,
+                                          "gameEventDrops":  [
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11566",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/0604efdb-74a3-4ef3-a3aa-6d5ed608f3ef.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-07-06T14:08:43.54Z",
+                                                                     "name":  "Rust Charity \u002726 Box",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11596",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/abb8b268-49a6-4701-bbf5-4f0f21b09194.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-09-28T15:02:01.762Z",
+                                                                     "name":  "Rust Isles Hoodie",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11568",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/b042b8b4-5d9d-4c25-90a5-ed7d3ca45c23.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-07-06T14:08:43.795Z",
+                                                                     "name":  "Rust Charity \u002726 Backpack",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11592",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/9c94dd88-a287-4ef1-bb6d-780286f05cd7.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-09-28T10:22:20.384Z",
+                                                                     "name":  "Rustoria Turret",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11571",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/6344dc84-3575-4f2d-b909-d22aff69d8f9.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-08-04T09:16:35.845Z",
+                                                                     "name":  "Global Warfare 4 Vending",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11591",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/1b5d36b1-c5af-454f-bf6f-2eedcb9b7bd6.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-09-28T07:44:21.971Z",
+                                                                     "name":  "Rustoria Med Box",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "0c95681b-95ad-4be7-a2ba-07dcace74891_CUSTOM_ID_11579",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/71455047-f3c2-434d-9d4c-991c3f8740ff.jpeg",
+                                                                     "isConnected":  true,
+                                                                     "lastAwardedAt":  "2026-09-29T07:26:55.351Z",
+                                                                     "name":  "Rust Isles Locker",
+                                                                     "requiredAccountLink":  "https://twitch.facepunch.com/connect",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 },
+                                                                 {
+                                                                     "game":  null,
+                                                                     "id":  "9d301169-a0d1-11f1-b7f4-0a58a9feac02",
+                                                                     "imageURL":  "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/83425dab-4481-4eb0-9e9d-e6f8d46ea60b.gif",
+                                                                     "isConnected":  false,
+                                                                     "lastAwardedAt":  "2026-09-29T12:47:16.542Z",
+                                                                     "name":  "IronmouseWah Emote",
+                                                                     "requiredAccountLink":  "https://help.twitch.tv/s/article/how-to-use-emotes",
+                                                                     "totalCount":  1,
+                                                                     "__typename":  "UserDropReward"
+                                                                 }
+                                                             ],
+                                          "__typename":  "Inventory"
+                                      },
+                        "__typename":  "User"
+                    }
+}

@@ -1,0 +1,5 @@
+# Code of Conduct / Davranış Kuralları
+
+**English.** Be respectful and constructive. No harassment, discrimination, personal attacks or spam. Do not post other people's private data or your own credentials. Do not use this project's issues to ask for help with cheating other players, evading bans or otherwise breaking a platform's rules. Issues/comments that break these rules may be edited, locked or removed, and repeat offenders blocked. Reports: thepinhan@gmail.com. This code applies in issues, pull requests and discussions of this repository.
+
+**Türkçe.** Saygılı ve yapıcı olun. Taciz, ayrımcılık, kişisel saldırı ve spam yok. Başkalarının özel verisini veya kendi kimlik bilgilerinizi paylaşmayın. Bu projenin issue'larını, diğer oyuncuları kandırma, yasaktan kaçınma veya bir platformun kurallarını başka şekilde ihlal etme konusunda yardım istemek için kullanmayın. Bu kuralları bozan issue/yorumlar düzenlenebilir, kilitlenebilir veya silinebilir; tekrar edenler engellenebilir. Bildirim: thepinhan@gmail.com. Bu kurallar, bu deponun issue, pull request ve tartışmalarında geçerlidir.

@@ -1,0 +1,146 @@
+{
+  "channel": {
+    "id": "1362574163",
+    "viewerDropCampaigns": [
+      {
+        "id": "2af30b0f-945d-434b-9deb-8161fdae8229",
+        "name": "Season 10.5 Twitch Drops",
+        "game": {
+          "id": "1264310518",
+          "name": "Marvel Rivals",
+          "__typename": "Game"
+        },
+        "detailsURL": "https://www.marvelrivals.com/twitchdrops/",
+        "endAt": "2026-11-06T08:59:59.999Z",
+        "imageURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/CAMPAIGN/774846b3-0b50-4f66-ba77-652c5f8eb92f.png",
+        "eventBasedDrops": [],
+        "timeBasedDrops": [
+          {
+            "id": "02430c7f-bb20-11f1-915d-0a58a9feac02",
+            "name": "Angela\u300CWill of Galacta\u300DCostume",
+            "startAt": "2026-10-09T12:00:00Z",
+            "endAt": "2026-11-06T08:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "34b86baa-bb20-11f1-b181-0a58a9feac02",
+                  "name": "Angela Costume",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/65f47d58-86e5-4796-96e5-c7dc9c6c6ebd.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 240,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "f73b9ab1-bb1f-11f1-a209-0a58a9feac02",
+            "name": "Angela\u300CWill of Galacta\u300DSpray",
+            "startAt": "2026-10-09T12:00:00Z",
+            "endAt": "2026-11-06T08:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "1763478f-bb20-11f1-af69-0a58a9feac02",
+                  "name": "Angela Spray",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/081bd059-11ed-404f-b8a2-2f64c1a26f9e.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 30,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "fb78bc14-bb1f-11f1-b9e7-0a58a9feac02",
+            "name": "Angela\u300CWill of Galacta\u300DNameplate",
+            "startAt": "2026-10-09T12:00:00Z",
+            "endAt": "2026-11-06T08:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "2173459a-bb20-11f1-84ed-0a58a9feac02",
+                  "name": "Angela Nameplate",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/d4d1d50f-86f1-4e39-bf4d-782a19907aef.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 60,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "feecc082-bb1f-11f1-9596-0a58a9feac02",
+            "name": "Angela\u300CSkipping Squirrel\u300DEmotes",
+            "startAt": "2026-10-09T12:00:00Z",
+            "endAt": "2026-11-06T08:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "2b54e630-bb20-11f1-9847-0a58a9feac02",
+                  "name": "Angela Emote",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/762336f9-083c-4a15-b5b1-1aa5f00a3358.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 120,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          }
+        ],
+        "summary": {
+          "includesMWRequirement": true,
+          "includesSubRequirement": false,
+          "isSitewide": false,
+          "isRewardCampaign": false,
+          "isPermanentlyDismissible": false,
+          "__typename": "DropCampaignSummary"
+        },
+        "localizedContent": {
+          "title": "Watch to earn Drops!",
+          "earnInstructions": "Get rewards by watching {Channel} while they\u0027re live in \u003Cx:bold\u003E{Category}\u003C/x:bold\u003E",
+          "actionItems": null,
+          "endDateText": "Ends on {EndDate}.",
+          "permanentDismissText": null,
+          "ctaText": "View Details",
+          "dismissText": "Dismiss",
+          "__typename": "DropCommunityHighlightCampaignLocalizedContent"
+        },
+        "__typename": "DropCampaign"
+      }
+    ],
+    "__typename": "Channel"
+  }
+}

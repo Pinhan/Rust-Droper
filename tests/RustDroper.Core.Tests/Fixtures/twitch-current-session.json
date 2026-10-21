@@ -1,0 +1,19 @@
+{
+    "currentUser":  {
+                        "id":  "1000",
+                        "dropCurrentSession":  {
+                                                   "channel":  {
+                                                                   "id":  "547167841",
+                                                                   "name":  "violetfno",
+                                                                   "displayName":  "فنو",
+                                                                   "__typename":  "Channel"
+                                                               },
+                                                   "game":  null,
+                                                   "currentMinutesWatched":  10,
+                                                   "requiredMinutesWatched":  60,
+                                                   "dropID":  "94911c9d-c7cb-11f1-ae09-0a58a9feac02",
+                                                   "__typename":  "DropCurrentSession"
+                                               },
+                        "__typename":  "User"
+                    }
+}

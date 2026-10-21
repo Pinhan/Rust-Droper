@@ -1,0 +1,60 @@
+{
+  "channel": {
+    "id": "135377687",
+    "viewerDropCampaigns": [
+      {
+        "id": "f754a865-0a42-42ae-8e40-e830c8d2bdc3",
+        "name": "SPOOKY SEASON",
+        "game": null,
+        "detailsURL": "",
+        "endAt": "2026-10-30T23:00:00Z",
+        "imageURL": "https://static-cdn.jtvnw.net/badges/v1/075d6167-e9fa-429e-bece-c7f8bf205331/3",
+        "eventBasedDrops": [],
+        "timeBasedDrops": [
+          {
+            "id": "3bc2632f-c2fb-11f1-a4ce-0a58a9feac02",
+            "name": "",
+            "startAt": "2026-10-08T09:32:51.5Z",
+            "endAt": "2026-10-30T23:00:00Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "3bc2636a-c2fb-11f1-a4ce-0a58a9feac02",
+                  "name": "SPOOKY SEASON",
+                  "game": null,
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/badges/v1/075d6167-e9fa-429e-bece-c7f8bf205331/3",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 0,
+            "requiredSubs": 5,
+            "__typename": "TimeBasedDrop"
+          }
+        ],
+        "summary": {
+          "includesMWRequirement": false,
+          "includesSubRequirement": true,
+          "isSitewide": false,
+          "isRewardCampaign": true,
+          "isPermanentlyDismissible": false,
+          "__typename": "DropCampaignSummary"
+        },
+        "localizedContent": {
+          "title": "Subscribe to earn Drops!",
+          "earnInstructions": "Get rewards by purchasing or gifting subscriptions to {Channel} while they\u0027re live in \u003Cx:bold\u003E{Category}\u003C/x:bold\u003E",
+          "actionItems": null,
+          "endDateText": "Ends on {EndDate}.",
+          "permanentDismissText": null,
+          "ctaText": "View Details",
+          "dismissText": "Dismiss",
+          "__typename": "DropCommunityHighlightCampaignLocalizedContent"
+        },
+        "__typename": "DropCampaign"
+      }
+    ],
+    "__typename": "Channel"
+  }
+}

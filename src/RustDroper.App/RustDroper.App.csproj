@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\RustDroper.Core\RustDroper.Core.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>RustDroper</AssemblyName>
+    <RootNamespace>RustDroper.App</RootNamespace>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Product>Rust Droper</Product>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+
+    <!-- Bellek (M5.4): tepside çalışan masaüstü uygulaması. Eşzamanlı (arka plan) GC kapalı = ek GC iş parçacığı/yığın yok; Server GC zaten kapalı. -->
+    <ServerGarbageCollector>false</ServerGarbageCollector>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>false</TieredPGO>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 0-9: daha yüksek = GC belleği daha istekli sıkıştırır/iade eder (CPU karşılığı); uygulamanın yığını küçük olduğundan ılımlı değer. -->
+    <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <EmbeddedResource Include="Resources\changelog.json" LogicalName="changelog.json" />
+    <InternalsVisibleTo Include="RustDroper.App.Tests" />
+    <Using Include="System.IO" />
+    <Using Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4258.31" />
+  </ItemGroup>
+
+</Project>

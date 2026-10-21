@@ -1,0 +1,47 @@
+{
+  "data": {
+    "livestreams": [
+      {
+        "id": "00000000-0000-7000-8000-000000000001",
+        "title": "Rust wipe day - base building",
+        "viewer_count": 329,
+        "show_view_count": true,
+        "thumbnail": { "src": "https://images.example.invalid/thumb/1/720.webp", "srcset": "" },
+        "start_time": "2026-10-16T07:39:35Z",
+        "channel": { "id": 100001, "slug": "rustfan_one", "profile_pic": "https://files.example.invalid/images/1.webp", "username": "RustFan_One" },
+        "category": { "id": 13, "name": "Rust", "slug": "rust" },
+        "language": "es",
+        "is_mature": false,
+        "tags": []
+      },
+      {
+        "id": "00000000-0000-7000-8000-000000000002",
+        "title": "Raiding with the squad",
+        "viewer_count": 210,
+        "show_view_count": true,
+        "thumbnail": { "src": "https://images.example.invalid/thumb/2/720.webp", "srcset": "" },
+        "start_time": "2026-10-16T08:10:00Z",
+        "channel": { "id": 100002, "slug": "rustfan_two", "profile_pic": "https://files.example.invalid/images/2.webp", "username": "RustFan_Two" },
+        "category": { "id": 13, "name": "Rust", "slug": "rust" },
+        "language": "en",
+        "is_mature": false,
+        "tags": []
+      },
+      {
+        "id": "00000000-0000-7000-8000-000000000003",
+        "title": "Solo naked start",
+        "viewer_count": 87,
+        "show_view_count": false,
+        "thumbnail": { "src": "https://images.example.invalid/thumb/3/720.webp", "srcset": "" },
+        "start_time": "2026-10-16T09:00:00Z",
+        "channel": { "id": 100003, "slug": "rustfan_three", "profile_pic": "https://files.example.invalid/images/3.webp", "username": "RustFan_Three" },
+        "category": { "id": 13, "name": "Rust", "slug": "rust" },
+        "language": "tr",
+        "is_mature": true,
+        "tags": []
+      }
+    ],
+    "pagination": { "next_cursor": "FAKECURSOR" }
+  },
+  "message": "Success"
+}

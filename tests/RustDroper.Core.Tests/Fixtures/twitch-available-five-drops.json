@@ -1,0 +1,172 @@
+{
+  "channel": {
+    "id": "80093668",
+    "viewerDropCampaigns": [
+      {
+        "id": "79416b15-8baa-4bec-981d-f366248a3c45",
+        "name": "Ignite Stage2 W4",
+        "game": {
+          "id": "1264310518",
+          "name": "Marvel Rivals",
+          "__typename": "Game"
+        },
+        "detailsURL": "https://www.marvelrivals.com/twitchdrops/",
+        "endAt": "2026-10-18T05:59:59.999Z",
+        "imageURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/CAMPAIGN/9b3692b4-b8b9-4c15-ab83-5b4d96047f28.png",
+        "eventBasedDrops": [],
+        "timeBasedDrops": [
+          {
+            "id": "b445b3b3-c478-11f1-96bd-0a58a9feac02",
+            "name": "Chrono Tokens *100",
+            "startAt": "2026-10-15T11:00:00Z",
+            "endAt": "2026-10-18T05:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "bca5cb28-c477-11f1-9dc4-0a58a9feac02",
+                  "name": "Stage2 Chrono Token 5",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/f773f474-924e-4e12-b02c-9034c6ef09bb.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 30,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "c5670c3c-c478-11f1-9e91-0a58a9feac02",
+            "name": "Cyclops\u300CWill of Galacta\u300DSpray",
+            "startAt": "2026-10-15T11:00:00Z",
+            "endAt": "2026-10-18T05:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "0eea3099-c478-11f1-8903-0a58a9feac02",
+                  "name": "Cyclops Spray",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/a1468844-8564-4f6b-a4f5-fab02a3861d3.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 60,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "cf5c7154-c478-11f1-982f-0a58a9feac02",
+            "name": "Chrono Tokens *100",
+            "startAt": "2026-10-15T11:00:00Z",
+            "endAt": "2026-10-18T05:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "c6f53692-c477-11f1-921e-0a58a9feac02",
+                  "name": "Stage2 Chrono Token 6",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/1c43a36f-4c4f-4e11-94f7-5351acc6e3a9.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 120,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "dc271573-c478-11f1-aa05-0a58a9feac02",
+            "name": "\u300CPLZ COME BACK\u300DSpray",
+            "startAt": "2026-10-15T11:00:00Z",
+            "endAt": "2026-10-18T05:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "20a37596-c478-11f1-8e0b-0a58a9feac02",
+                  "name": "\u300CPLZ COME BACK\u300DSpray",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/8f613c35-a111-49b3-a3b7-a43fe4026130.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 240,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          },
+          {
+            "id": "e484c531-c478-11f1-a716-0a58a9feac02",
+            "name": "\u300CHEXA CROWN\u300DNameplate",
+            "startAt": "2026-10-15T11:00:00Z",
+            "endAt": "2026-10-18T05:59:59.999Z",
+            "benefitEdges": [
+              {
+                "benefit": {
+                  "id": "2d910837-c478-11f1-8480-0a58a9feac02",
+                  "name": "\u300CHEXA CROWN\u300DNameplate",
+                  "game": {
+                    "name": "Marvel Rivals",
+                    "id": "1264310518",
+                    "__typename": "Game"
+                  },
+                  "imageAssetURL": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/c4258dde-4d7c-48da-8c96-64a70e431847.png",
+                  "__typename": "DropBenefit"
+                },
+                "entitlementLimit": 1,
+                "__typename": "DropBenefitEdge"
+              }
+            ],
+            "requiredMinutesWatched": 360,
+            "requiredSubs": 0,
+            "__typename": "TimeBasedDrop"
+          }
+        ],
+        "summary": {
+          "includesMWRequirement": true,
+          "includesSubRequirement": false,
+          "isSitewide": false,
+          "isRewardCampaign": false,
+          "isPermanentlyDismissible": false,
+          "__typename": "DropCampaignSummary"
+        },
+        "localizedContent": {
+          "title": "Watch to earn Drops!",
+          "earnInstructions": "Get rewards by watching {Channel} while they\u0027re live in \u003Cx:bold\u003E{Category}\u003C/x:bold\u003E",
+          "actionItems": null,
+          "endDateText": "Ends on {EndDate}.",
+          "permanentDismissText": null,
+          "ctaText": "View Details",
+          "dismissText": "Dismiss",
+          "__typename": "DropCommunityHighlightCampaignLocalizedContent"
+        },
+        "__typename": "DropCampaign"
+      }
+    ],
+    "__typename": "Channel"
+  }
+}

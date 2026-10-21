@@ -1,0 +1,158 @@
+<Window x:Class="RustDroper.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:RustDroper.App.Views"
+        xmlns:loc="clr-namespace:RustDroper.App.Localization"
+        Title="Rust Droper" Width="960" Height="780" MinWidth="900" MinHeight="540"
+        Icon="pack://application:,,,/RustDroper;component/Assets/app.ico"
+        Background="{StaticResource BgBrush}" Foreground="{StaticResource TextBrush}"
+        FontFamily="Segoe UI" FontSize="13"
+        WindowStartupLocation="CenterScreen" UseLayoutRounding="True" TextOptions.TextFormattingMode="Display">
+    <Window.Resources>
+        <!-- Başlat/Duraklat ikonu (çalışırken duraklat) ve Ayarlar ikonu (ayarlardayken geri) -->
+        <Style x:Key="StartPauseIcon" TargetType="views:Icon" BasedOn="{StaticResource BtnIcon}">
+            <Setter Property="Data" Value="{StaticResource IconPlay}" />
+            <Setter Property="IsFilled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsRunning}" Value="True">
+                    <Setter Property="Data" Value="{StaticResource IconPause}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ReleaseNotesIcon" TargetType="views:Icon" BasedOn="{StaticResource BtnIcon}">
+            <Setter Property="Data" Value="{StaticResource IconHistory}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ShowReleaseNotes}" Value="True">
+                    <Setter Property="Data" Value="{StaticResource IconBack}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SettingsIcon" TargetType="views:Icon" BasedOn="{StaticResource BtnIcon}">
+            <Setter Property="Data" Value="{StaticResource IconSliders}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ShowSettings}" Value="True">
+                    <Setter Property="Data" Value="{StaticResource IconBack}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="22,14,22,14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Başlık: uygulama işareti + ortak komutlar (Başlat/Duraklat iki platformu birlikte yönetir) -->
+        <Grid Grid.Row="0" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Border Width="34" Height="34" CornerRadius="9" Background="{StaticResource AccentBrush}">
+                    <views:Icon Data="{StaticResource IconDrop}" IsFilled="True" Foreground="White" Width="18" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                <TextBlock Text="Rust Droper" FontSize="19" FontWeight="SemiBold" Margin="12,0,0,0" VerticalAlignment="Center" />
+            </StackPanel>
+            <!-- Twitch ⇄ Kick geçişi: başlık çubuğunun ortasında (Kick servisi yoksa gizli) -->
+            <views:PlatformToggle Grid.Column="1" Height="42" Margin="12,0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding HasKick, Converter={StaticResource BoolToVis}}" />
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Command="{Binding StartPauseCommand}" Style="{StaticResource PrimaryButton}" MinWidth="116" Margin="0,0,6,0"
+                        AutomationProperties.AutomationId="StartPauseButton">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <views:Icon Style="{StaticResource StartPauseIcon}" />
+                        <TextBlock Text="{Binding StartPauseLabel}" />
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding RefreshCommand}" Style="{StaticResource GhostButton}" ToolTip="{loc:Loc main.refresh.tip}"
+                        AutomationProperties.AutomationId="RefreshButton">
+                    <views:Icon Style="{StaticResource BtnIcon}" Data="{StaticResource IconRefresh}" Margin="0" Width="18" Height="18" />
+                </Button>
+                <Button Command="{Binding ToggleHealthCommand}" Style="{StaticResource GhostButton}" AutomationProperties.AutomationId="HealthButton">
+                    <views:Icon Style="{StaticResource BtnIcon}" Data="{StaticResource IconActivity}" Margin="0" Width="18" Height="18" />
+                    <Button.ToolTip>
+                        <TextBlock Text="{Binding HealthButtonLabel}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button Command="{Binding ToggleSettingsCommand}" Style="{StaticResource GhostButton}" AutomationProperties.AutomationId="SettingsButton">
+                    <views:Icon Style="{StaticResource SettingsIcon}" Margin="0" Width="18" Height="18" />
+                    <Button.ToolTip>
+                        <TextBlock Text="{Binding SettingsButtonLabel}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button Command="{Binding ToggleReleaseNotesCommand}" Style="{StaticResource GhostButton}" AutomationProperties.AutomationId="ReleaseNotesButton">
+                    <views:Icon Style="{StaticResource ReleaseNotesIcon}" Margin="0" Width="18" Height="18" />
+                    <Button.ToolTip>
+                        <TextBlock Text="{Binding ReleaseNotesButtonLabel}" />
+                    </Button.ToolTip>
+                </Button>
+                <Button Command="{Binding ToggleAboutCommand}" Style="{StaticResource GhostButton}" AutomationProperties.AutomationId="AboutButton">
+                    <views:Icon Style="{StaticResource BtnIcon}" Data="{StaticResource IconInfo}" Margin="0" Width="18" Height="18" />
+                    <Button.ToolTip>
+                        <TextBlock Text="{loc:Loc main.about.tip}" />
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Platform ekranı: yalnız seçili platformun kartı, uyarısı, panosu; geçişte kayar/solar -->
+        <Grid Grid.Row="2" x:Name="ScreenHost">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="ScreenShift" X="0" />
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="0,0,0,12" Padding="14,10" CornerRadius="8" BorderThickness="1" BorderBrush="{StaticResource WarnBrush}"
+                    Background="{StaticResource PanelBrush}" Visibility="{Binding Notice, Converter={StaticResource PresentToVis}}"
+                    AutomationProperties.AutomationId="NoticeStrip">
+                <StackPanel Orientation="Horizontal">
+                    <views:Icon Data="{StaticResource IconAlert}" Foreground="{StaticResource WarnBrush}" Width="16" Height="16" Margin="0,1,10,0" VerticalAlignment="Top" />
+                    <TextBlock Text="{Binding Notice}" Foreground="{StaticResource WarnBrush}" TextWrapping="Wrap" MaxWidth="780" />
+                </StackPanel>
+            </Border>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="0,0,6,0">
+                <StackPanel>
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Visibility" Value="Visible" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ShowSettings}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ShowHealth}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ShowAbout}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ShowReleaseNotes}" Value="True">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <ContentControl Content="{Binding SelectedCard}" ContentTemplate="{StaticResource PlatformCardTemplate}" Margin="0,0,0,16" />
+                        <views:DashboardView DataContext="{Binding Dashboard}" />
+                    </StackPanel>
+                    <views:HealthView Visibility="{Binding ShowHealth, Converter={StaticResource BoolToVis}}" />
+                    <views:ReleaseNotesView DataContext="{Binding ReleaseNotes}" Visibility="{Binding DataContext.ShowReleaseNotes, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVis}}" />
+                    <views:AboutView DataContext="{Binding About}" Visibility="{Binding DataContext.ShowAbout, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVis}}" />
+                    <views:SettingsView DataContext="{Binding Settings}"
+                                        Visibility="{Binding DataContext.ShowSettings, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVis}}" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- Alt bilgi: sürüm + geliştirici -->
+        <TextBlock Grid.Row="3" Text="{Binding About.FooterText}" Style="{StaticResource Muted}" FontSize="11" HorizontalAlignment="Center" Margin="0,8,0,0"
+                   AutomationProperties.AutomationId="FooterText" />
+    </Grid>
+</Window>

@@ -1,0 +1,86 @@
+<UserControl x:Class="RustDroper.App.Views.PlatformToggle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:RustDroper.App.Views"
+             xmlns:loc="clr-namespace:RustDroper.App.Localization"
+             Width="276" Height="46" HorizontalAlignment="Center">
+    <UserControl.Resources>
+        <!-- Segment düğmesi: yalnız içerik + çok hafif hover; seçim göstergesini ve renkleri kod animasyonla kaydırır -->
+        <Style x:Key="SegmentButton" TargetType="Button">
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent">
+                            <Border x:Name="Hover" CornerRadius="17" Background="White" Opacity="0" IsHitTestVisible="False" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity" To="0.06" Duration="0:0:0.12" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.16" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="AttentionDot" TargetType="Ellipse">
+            <Setter Property="Width" Value="7" />
+            <Setter Property="Height" Value="7" />
+            <Setter Property="Fill" Value="#C5CAD3" />
+            <Setter Property="Margin" Value="8,1,0,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="ToolTip" Value="{loc:Loc toggle.attention}" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <!-- Oluk -->
+        <Border CornerRadius="23" Background="{StaticResource TrackBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" />
+        <!-- Kayan gösterge: kenar rengi seçili platformun vurgusudur -->
+        <Border x:Name="Thumb" Width="134" HorizontalAlignment="Left" Margin="4" CornerRadius="19"
+                Background="{StaticResource ThumbBrush}" BorderBrush="{DynamicResource PlatformAccentBrush}" BorderThickness="1.5">
+            <Border.RenderTransform>
+                <TranslateTransform x:Name="ThumbShift" X="0" />
+            </Border.RenderTransform>
+        </Border>
+        <UniformGrid Columns="2" Margin="4">
+            <Button x:Name="TwitchSegment" Style="{StaticResource SegmentButton}" Command="{Binding SelectPlatformCommand}" CommandParameter="Twitch"
+                    AutomationProperties.AutomationId="PlatformToggleTwitch" AutomationProperties.Name="Twitch">
+                <Button.Foreground>
+                    <SolidColorBrush x:Name="TwitchLabel" Color="#9AA0A8" />
+                </Button.Foreground>
+                <StackPanel Orientation="Horizontal">
+                    <views:Icon x:Name="TwitchGlyph" Data="{StaticResource IconTwitch}" IsFilled="True" Foreground="{StaticResource TwitchBrush}" Width="17" Height="17" Margin="0,0,8,0" Opacity="0.6" />
+                    <TextBlock Text="Twitch" FontSize="14" FontWeight="SemiBold" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+                    <Ellipse Style="{StaticResource AttentionDot}" Visibility="{Binding TwitchAttentionDot, Converter={StaticResource BoolToVis}}" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="KickSegment" Style="{StaticResource SegmentButton}" Command="{Binding SelectPlatformCommand}" CommandParameter="Kick"
+                    AutomationProperties.AutomationId="PlatformToggleKick" AutomationProperties.Name="Kick">
+                <Button.Foreground>
+                    <SolidColorBrush x:Name="KickLabel" Color="#9AA0A8" />
+                </Button.Foreground>
+                <StackPanel Orientation="Horizontal">
+                    <views:Icon x:Name="KickGlyph" Data="{StaticResource IconKick}" IsFilled="True" Foreground="{StaticResource KickBrush}" Width="17" Height="17" Margin="0,0,8,0" Opacity="0.6" />
+                    <TextBlock Text="Kick" FontSize="14" FontWeight="SemiBold" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+                    <Ellipse Style="{StaticResource AttentionDot}" Visibility="{Binding KickAttentionDot, Converter={StaticResource BoolToVis}}" />
+                </StackPanel>
+            </Button>
+        </UniformGrid>
+    </Grid>
+</UserControl>

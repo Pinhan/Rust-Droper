@@ -1,0 +1,31 @@
+{
+  "id": 100001,
+  "user_id": 200001,
+  "slug": "rustfan_one",
+  "is_banned": false,
+  "playback_url": "https://example.invalid/api/video/v1/us-west-2.000000000000.channel.FAKECHANNEL.m3u8?token=FAKE.TOKEN.VALUE",
+  "vod_enabled": true,
+  "subscription_enabled": true,
+  "followers_count": 5,
+  "livestream": {
+    "id": 900001,
+    "slug": "fake-livestream-slug",
+    "channel_id": 100001,
+    "session_title": "Rust wipe day - base building",
+    "is_live": true,
+    "start_time": "2026-10-16 07:39:35",
+    "duration": 0,
+    "language": "Spanish",
+    "is_mature": false,
+    "viewer_count": 329,
+    "thumbnail": { "url": "https://example.invalid/thumbnails/900001/thumb0.jpg" },
+    "lang_iso": "es",
+    "tags": [],
+    "categories": [
+      { "id": 13, "category_id": 1, "name": "Rust", "slug": "rust", "tags": ["Shooter"], "viewers": 1331, "is_fallback": false }
+    ]
+  },
+  "verified": true,
+  "user": { "id": 200001, "username": "RustFan_One", "bio": "", "profile_pic": "https://files.example.invalid/images/1.webp" },
+  "chatroom": { "id": 300001, "channel_id": 100001, "chat_mode": "public", "slow_mode": false }
+}

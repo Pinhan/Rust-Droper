@@ -1,0 +1,38 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+publish/
+artifacts/
+TestResults/
+*.binlog
+*.trx
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.DotSettings.user
+*.rsuser
+
+# Runtime / local data (never commit sign-in data, logs or test accounts)
+data/
+data-*/
+*.dat
+secrets.dat
+secrets.json
+*.log
+logs/
+history.jsonl
+settings.local.json
+.env
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# NuGet
+*.nupkg
+*.snupkg

@@ -1,0 +1,12 @@
+{
+  "data": {
+    "id": "CAMPAIGN_AAAA",
+    "progress_units": 130,
+    "rewards": [
+      { "id": "REWARD_A1", "claimed": true, "progress": 1 },
+      { "id": "REWARD_A2", "claimed": false, "progress": 0.5416666666666666 },
+      { "id": "REWARD_A3", "claimed": false, "progress": 0 }
+    ]
+  },
+  "message": "Success"
+}

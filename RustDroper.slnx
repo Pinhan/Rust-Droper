@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RustDroper.App/RustDroper.App.csproj" />
+    <Project Path="src/RustDroper.Cli/RustDroper.Cli.csproj" />
+    <Project Path="src/RustDroper.Core/RustDroper.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/RustDroper.App.Tests/RustDroper.App.Tests.csproj" />
+    <Project Path="tests/RustDroper.Core.Tests/RustDroper.Core.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "id": "CAMPAIGN_AAAA",
+      "name": "Fake Rust Drops",
+      "status": "in_progress",
+      "user_app_connected": true,
+      "progress_units": 130,
+      "rewards": [
+        { "id": "REWARD_A1", "name": "Fake Reward 1", "required_units": 120, "claimed": true, "progress": 1 },
+        { "id": "REWARD_A2", "name": "Fake Reward 2", "required_units": 240, "claimed": false, "progress": 0.5416666666666666 },
+        { "id": "REWARD_A3", "name": "Fake Reward 3", "required_units": 360, "claimed": false, "progress": 0 }
+      ]
+    },
+    {
+      "id": "CAMPAIGN_BBBB",
+      "name": "Fake Other Drops",
+      "status": "claimed",
+      "user_app_connected": false,
+      "rewards": [
+        { "id": "REWARD_B1", "required_units": 60, "claimed": true, "progress": 1 }
+      ]
+    }
+  ],
+  "message": "Success"
+}

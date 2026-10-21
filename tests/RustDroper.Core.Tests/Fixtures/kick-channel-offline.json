@@ -1,0 +1,10 @@
+{
+  "id": 100004,
+  "user_id": 200004,
+  "slug": "rustfan_four",
+  "is_banned": false,
+  "playback_url": null,
+  "livestream": null,
+  "verified": false,
+  "user": { "id": 200004, "username": "RustFan_Four", "profile_pic": "https://files.example.invalid/images/4.webp" }
+}
