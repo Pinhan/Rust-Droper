@@ -4,6 +4,15 @@
 
 [Türkçe](README.tr.md) · [Download](../../releases/latest) · [Changelog](CHANGELOG.md) · [Usage guide](docs/USAGE.md) · [License: MIT](LICENSE)
 
+> [!IMPORTANT]
+> ### ⬇️ How to download and run
+> 1. Open the **[Releases page](https://github.com/Pinhan/Rust-Droper/releases/latest)**.
+> 2. Under **Assets**, download **`RustDroper-<version>-win-x64.zip`**.
+> 3. Unzip it anywhere and double-click **`RustDroper.exe`** (no installer).
+>
+> ⚠️ Do **not** use the green **Code → Download ZIP** button or the *"Source code (zip)"* files: those are only the program's source code and contain **no `.exe`**.
+
+
 Rust Droper is a small Windows tray app for the [Rust](https://rust.facepunch.com/) *Twitch Drops* and *Kick Drops* events. You sign in once; it then follows the active Rust campaigns, keeps a suitable stream "watched" for you, shows progress and claims finished rewards. Rust only — no other game.
 
 ![Rust Droper dashboard (English)](docs/screenshots/dashboard-en.png)

@@ -4,6 +4,15 @@
 
 [English](README.md) · [İndir](../../releases/latest) · [Değişiklik günlüğü](CHANGELOG.tr.md) · [Kullanım kılavuzu](docs/USAGE.tr.md) · [Lisans: MIT](LICENSE)
 
+> [!IMPORTANT]
+> ### ⬇️ Nasıl indirilir ve çalıştırılır
+> 1. **[Releases (Sürümler) sayfasını](https://github.com/Pinhan/Rust-Droper/releases/latest)** açın.
+> 2. **Assets** bölümünden **`RustDroper-<sürüm>-win-x64.zip`** dosyasını indirin.
+> 3. Zip'i herhangi bir yere açın ve **`RustDroper.exe`**'ye çift tıklayın (kurulum yok).
+>
+> ⚠️ Yeşil **Code → Download ZIP** düğmesini ya da *"Source code (zip)"* dosyalarını **kullanmayın**: onlar yalnızca programın kaynak kodudur ve içinde **`.exe` yoktur**.
+
+
 Rust Droper, [Rust](https://rust.facepunch.com/) oyununun *Twitch Drops* ve *Kick Drops* etkinlikleri için küçük bir Windows tepsi uygulamasıdır. Bir kez giriş yaparsınız; uygulama aktif Rust kampanyalarını takip eder, sizin yerinize uygun bir yayını "izler", ilerlemeyi gösterir ve tamamlanan ödülleri claim eder. Yalnızca Rust — başka oyun yok.
 
 ![Rust Droper panosu (Türkçe)](docs/screenshots/dashboard-tr.png)

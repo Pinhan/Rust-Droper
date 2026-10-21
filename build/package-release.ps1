@@ -59,7 +59,7 @@ $footer = @"
 
 
 ---
-**Download / Indir:** ``$zipName`` - run ``RustDroper.exe`` (Windows 10/11 x64, no install). Verify with ``SHA256SUMS.txt``.
+**Download / Indir:** ``$zipName`` from **Assets** below (NOT the "Source code" files, they have no exe / "Source code" dosyalarinda exe YOKTUR) - unzip and run ``RustDroper.exe`` (Windows 10/11 x64, no install). Verify with ``SHA256SUMS.txt``.
 The executable is **not code-signed**: Windows SmartScreen may warn; see the README for details and for building from source. / Exe kod imzali degildir; SmartScreen uyarabilir, ayrintilar README'de.
 **Use at your own risk** - Twitch/Kick terms may restrict automation; not affiliated with Twitch, Kick, Facepunch or Rust. / Kullanim riski size aittir; Twitch, Kick, Facepunch veya Rust ile baglantili degildir.
 Full changelog: [CHANGELOG.md]($repoUrl/blob/main/CHANGELOG.md) - [CHANGELOG.tr.md]($repoUrl/blob/main/CHANGELOG.tr.md) - [README]($repoUrl#readme)
