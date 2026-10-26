@@ -21,6 +21,7 @@ public sealed class TwitchDropPlatform : IDropPlatform
     private readonly HlsQuality _quality;
     private readonly int _probeChannels;
     private readonly ILogger _logger;
+    private IReadOnlyCollection<string> _knownEligible = [];
     private readonly Func<Campaign, bool>? _campaignFilter;
     private readonly System.Collections.Concurrent.ConcurrentDictionary<string, string> _dropCampaigns = new(StringComparer.Ordinal);
 
@@ -31,7 +32,7 @@ public sealed class TwitchDropPlatform : IDropPlatform
         TwitchPubSubClient? pubsub = null,
         TwitchAutoClaimer? autoClaimer = null,
         HlsQuality quality = HlsQuality.LowestVideo,
-        int probeChannels = 6,
+        int probeChannels = 100,
         ILogger? logger = null,
         Func<Campaign, bool>? campaignFilter = null)
     {
@@ -78,7 +79,8 @@ public sealed class TwitchDropPlatform : IDropPlatform
     public async Task<PlatformSnapshot> DiscoverAsync(string gameSlug, CancellationToken cancellationToken)
     {
         var discovery = await new TwitchCampaignDiscovery(_gql, _logger)
-            .DiscoverAsync(gameSlug, _probeChannels, cancellationToken).ConfigureAwait(false);
+            .DiscoverAsync(gameSlug, _probeChannels, cancellationToken, knownEligibleChannelIds: _knownEligible).ConfigureAwait(false);
+        _knownEligible = [.. discovery.ChannelsByCampaign.Values.SelectMany(l => l).Select(c => c.Id).Distinct(StringComparer.Ordinal)];
         // "Yalnız Rust ödülleri": Rust yayınında bulunan ama Rust ödülü vermeyen kampanyalar (ör. yayıncının sohbet rozeti) elenir.
         var kept = discovery.Campaigns;
         var excluded = new List<string>();

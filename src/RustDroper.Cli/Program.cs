@@ -308,7 +308,7 @@ async Task<int> CampaignsTwitchAsync(string[] slugs)
         }
     }
 
-    var discovery = await new TwitchCampaignDiscovery(gql, logger).DiscoverAsync(slug, channelsToProbe: 5, cts.Token);
+    var discovery = await new TwitchCampaignDiscovery(gql, logger).DiscoverAsync(slug, channelsToProbe: ProbeCount(args, 5), cts.Token);
     Console.WriteLine();
     Console.WriteLine($"'{slug}' için Drops-Enabled canlı yayın: {discovery.Channels.Count} · izleme süreli kampanya: {discovery.Campaigns.Count}");
     foreach (var campaign in discovery.Campaigns)
@@ -609,7 +609,7 @@ async Task<int> ScanTwitchAsync(string[] slugs)
             }
 
             var timeBased = new Dictionary<string, string>();
-            foreach (var channel in nodes.Take(3))
+            foreach (var channel in nodes.Take(ProbeCount(args, 3)))
             {
                 using var available = await gql.ExecuteAsync(GqlOperations.AvailableDrops, new Dictionary<string, object?> { ["channelID"] = channel.Id }, cts.Token);
                 Save(slug, "available-" + channel.Login, available.Data);
@@ -722,4 +722,11 @@ async Task<int> WhoAmITwitchAsync()
             Console.WriteLine("Twitch: giriş yapılmamış. 'login twitch' çalıştırın.");
             return 1;
     }
+}
+
+// --probe N: AvailableDrops'ı kaç kanalda sorgula (varsayılan çağıran verir).
+static int ProbeCount(string[] args, int fallback)
+{
+    var index = Array.FindIndex(args, a => string.Equals(a, "--probe", StringComparison.OrdinalIgnoreCase));
+    return index >= 0 && index + 1 < args.Length && int.TryParse(args[index + 1], out var n) && n is >= 1 and <= 100 ? n : fallback;
 }

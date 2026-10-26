@@ -4,6 +4,19 @@ All notable changes to Rust Droper are listed here, newest first. Versions follo
 
 > This file is generated from `src/RustDroper.App/Resources/changelog.json` (`powershell -File build\changelog.ps1`). Do not edit it by hand. Turkish version: [CHANGELOG.tr.md](CHANGELOG.tr.md).
 
+## [1.0.1] — 2026-10-26 · PATCH · Bug fix / Campaign discovery
+
+Fixed a campaign discovery bug that left the app 'Idle' once the event had started: streams that carry drops are now searched deeper in the stream list.
+
+### Changed
+
+- Discovery no longer stops at the first few channels of the 'Drops Enabled' list; it keeps scanning (up to 100 channels) until enough channels with drops are found, and re-checks known ones first next time
+- A campaign's scope (general/streamer) is now decided only among channels that actually carry drops
+
+### Fixed
+
+- The app stayed 'Idle' and watched nothing although the event had started, because the channels carrying the event campaign were not at the top of the stream list
+
 ## [1.0.0] — 2026-10-20 · BASELINE · Initial release
 
 The first stable release of Rust Droper and the reference (baseline) for every release after it. It collects the Rust drops on Twitch and Kick in the background.

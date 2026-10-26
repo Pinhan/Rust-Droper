@@ -1,31 +1,113 @@
 {
   "releases": [
     {
+      "version": "1.0.1",
+      "date": "2026-10-26",
+      "type": "patch",
+      "tag": {
+        "tr": "Hata düzeltme / Kampanya keşfi",
+        "en": "Bug fix / Campaign discovery"
+      },
+      "summary": {
+        "tr": "Etkinlik başladığında uygulamanın 'Boşta' kalmasına yol açan kampanya keşfi hatası düzeltildi: drop'u olan yayınlar artık yayın listesinde daha derin aranıyor.",
+        "en": "Fixed a campaign discovery bug that left the app 'Idle' once the event had started: streams that carry drops are now searched deeper in the stream list."
+      },
+      "added": [],
+      "changed": [
+        {
+          "tr": "Keşif, 'Drops Enabled' yayın listesinin ilk birkaç kanalıyla yetinmiyor; drop'u olan yeterli kanal bulunana dek (en çok 100 kanal) tarıyor ve bulunan kanalları sonraki taramada önce kontrol ediyor",
+          "en": "Discovery no longer stops at the first few channels of the 'Drops Enabled' list; it keeps scanning (up to 100 channels) until enough channels with drops are found, and re-checks known ones first next time"
+        },
+        {
+          "tr": "Kampanya kapsamı (genel/yayıncı) artık yalnızca drop'u olan kanallara göre belirleniyor",
+          "en": "A campaign's scope (general/streamer) is now decided only among channels that actually carry drops"
+        }
+      ],
+      "fixed": [
+        {
+          "tr": "Etkinlik başlamış olduğu halde uygulama 'Boşta' kalıp hiçbir yayını izlemiyordu; çünkü etkinlik kampanyasını taşıyan kanallar yayın listesinde ilk sıralarda değildi",
+          "en": "The app stayed 'Idle' and watched nothing although the event had started, because the channels carrying the event campaign were not at the top of the stream list"
+        }
+      ],
+      "removed": []
+    },
+    {
       "version": "1.0.0",
       "date": "2026-10-20",
       "type": "baseline",
-      "tag": { "tr": "İlk sürüm", "en": "Initial release" },
+      "tag": {
+        "tr": "İlk sürüm",
+        "en": "Initial release"
+      },
       "summary": {
         "tr": "Rust Droper'ın ilk kararlı sürümü ve bundan sonraki tüm sürümlerin referansı (baseline). Rust oyununun Twitch ve Kick drop'larını arka planda toplar.",
         "en": "The first stable release of Rust Droper and the reference (baseline) for every release after it. It collects the Rust drops on Twitch and Kick in the background."
       },
       "added": [
-        { "tr": "Rust'ın Twitch ve Kick drop kampanyalarını sistem tepsisinden arka planda kendiliğinden takip eder", "en": "Follows Rust's Twitch and Kick drop campaigns automatically in the background from the system tray" },
-        { "tr": "Twitch'te izleme gerçek yayın akışıyla (tarayıcısız), Kick'te gizli bir tarayıcı oynatıcısıyla yapılır", "en": "Watching uses the real stream feed on Twitch (no browser) and a hidden browser player on Kick" },
-        { "tr": "Her platform için ayrı ekran ve başlıkta Twitch ⇄ Kick geçişi", "en": "A separate screen for each platform, with a Twitch ⇄ Kick switch in the title bar" },
-        { "tr": "Drop kartı ızgarası: görsel, ilerleme çubuğu ve durumlar (sırada, izleniyor, claim'e hazır, claim edildi)", "en": "Drop card grid with images, progress bars and states (queued, watching, ready to claim, claimed)" },
-        { "tr": "Otomatik claim (varsayılan olarak açık) ve claim edilen ödüller bölümü", "en": "Auto-claim (on by default) and a claimed rewards section" },
-        { "tr": "Yayıncı drop'ları için sürükle-bırak öncelik sırası", "en": "Drag-and-drop priority order for streamer drops" },
-        { "tr": "Etkinlik kartı: Facepunch etkinliğinin adı, tarihleri ve geri sayımı", "en": "Event card with the Facepunch event's name, dates and countdown" },
-        { "tr": "Yalnız Rust ödülü veren kampanyaları izleyen filtre (Ayarlar'dan kapatılabilir)", "en": "A filter that follows only campaigns that give Rust rewards (can be turned off in Settings)" },
-        { "tr": "Çökme koruması: beklenmedik kapanışta uygulama kendiliğinden yeniden açılıp kaldığı yerden devam eder", "en": "Crash protection: after an unexpected close the app reopens by itself and resumes where it left off" },
-        { "tr": "İnternet kesintisi ve bilgisayar uykusu sonrası otomatik toparlanma; çalışırken uykuya geçmeyi engelleme", "en": "Automatic recovery after internet outages and PC sleep, plus preventing sleep while running" },
-        { "tr": "Sağlık kontrolü sayfası: giriş, bağlantı, kampanya keşfi ve ayarların durumunu gösterir", "en": "Health check page showing the state of sign-in, connection, campaign discovery and settings" },
-        { "tr": "Tepsi simgesi, menü ve bildirimler (claim edildi, giriş gerekli, kampanya başladı, bağlantı kesildi)", "en": "Tray icon, menu and notifications (drop claimed, sign-in required, campaign started, connection lost)" },
-        { "tr": "Türkçe ve İngilizce arayüz; Windows diline göre otomatik seçim ve anında dil değiştirme", "en": "Turkish and English interface, chosen automatically from the Windows language and switchable instantly" },
-        { "tr": "Hakkında ve Güncelleme notları sayfaları", "en": "About and Release notes pages" },
-        { "tr": "Başlat'a basınca, aynı hesapla başka bir canlı yayın izlememeyi hatırlatan uyarı", "en": "A reminder when pressing Start not to watch another live stream with the same account" },
-        { "tr": "Taşınabilir tek dosya: kurulum gerektirmez; oturum bilgileri yalnız bu bilgisayarda Windows hesabına bağlı şifreyle (DPAPI) saklanır", "en": "Portable single file: no installation; sign-in data stays on this PC, encrypted (DPAPI) and tied to your Windows account" }
+        {
+          "tr": "Rust'ın Twitch ve Kick drop kampanyalarını sistem tepsisinden arka planda kendiliğinden takip eder",
+          "en": "Follows Rust's Twitch and Kick drop campaigns automatically in the background from the system tray"
+        },
+        {
+          "tr": "Twitch'te izleme gerçek yayın akışıyla (tarayıcısız), Kick'te gizli bir tarayıcı oynatıcısıyla yapılır",
+          "en": "Watching uses the real stream feed on Twitch (no browser) and a hidden browser player on Kick"
+        },
+        {
+          "tr": "Her platform için ayrı ekran ve başlıkta Twitch ⇄ Kick geçişi",
+          "en": "A separate screen for each platform, with a Twitch ⇄ Kick switch in the title bar"
+        },
+        {
+          "tr": "Drop kartı ızgarası: görsel, ilerleme çubuğu ve durumlar (sırada, izleniyor, claim'e hazır, claim edildi)",
+          "en": "Drop card grid with images, progress bars and states (queued, watching, ready to claim, claimed)"
+        },
+        {
+          "tr": "Otomatik claim (varsayılan olarak açık) ve claim edilen ödüller bölümü",
+          "en": "Auto-claim (on by default) and a claimed rewards section"
+        },
+        {
+          "tr": "Yayıncı drop'ları için sürükle-bırak öncelik sırası",
+          "en": "Drag-and-drop priority order for streamer drops"
+        },
+        {
+          "tr": "Etkinlik kartı: Facepunch etkinliğinin adı, tarihleri ve geri sayımı",
+          "en": "Event card with the Facepunch event's name, dates and countdown"
+        },
+        {
+          "tr": "Yalnız Rust ödülü veren kampanyaları izleyen filtre (Ayarlar'dan kapatılabilir)",
+          "en": "A filter that follows only campaigns that give Rust rewards (can be turned off in Settings)"
+        },
+        {
+          "tr": "Çökme koruması: beklenmedik kapanışta uygulama kendiliğinden yeniden açılıp kaldığı yerden devam eder",
+          "en": "Crash protection: after an unexpected close the app reopens by itself and resumes where it left off"
+        },
+        {
+          "tr": "İnternet kesintisi ve bilgisayar uykusu sonrası otomatik toparlanma; çalışırken uykuya geçmeyi engelleme",
+          "en": "Automatic recovery after internet outages and PC sleep, plus preventing sleep while running"
+        },
+        {
+          "tr": "Sağlık kontrolü sayfası: giriş, bağlantı, kampanya keşfi ve ayarların durumunu gösterir",
+          "en": "Health check page showing the state of sign-in, connection, campaign discovery and settings"
+        },
+        {
+          "tr": "Tepsi simgesi, menü ve bildirimler (claim edildi, giriş gerekli, kampanya başladı, bağlantı kesildi)",
+          "en": "Tray icon, menu and notifications (drop claimed, sign-in required, campaign started, connection lost)"
+        },
+        {
+          "tr": "Türkçe ve İngilizce arayüz; Windows diline göre otomatik seçim ve anında dil değiştirme",
+          "en": "Turkish and English interface, chosen automatically from the Windows language and switchable instantly"
+        },
+        {
+          "tr": "Hakkında ve Güncelleme notları sayfaları",
+          "en": "About and Release notes pages"
+        },
+        {
+          "tr": "Başlat'a basınca, aynı hesapla başka bir canlı yayın izlememeyi hatırlatan uyarı",
+          "en": "A reminder when pressing Start not to watch another live stream with the same account"
+        },
+        {
+          "tr": "Taşınabilir tek dosya: kurulum gerektirmez; oturum bilgileri yalnız bu bilgisayarda Windows hesabına bağlı şifreyle (DPAPI) saklanır",
+          "en": "Portable single file: no installation; sign-in data stays on this PC, encrypted (DPAPI) and tied to your Windows account"
+        }
       ],
       "changed": [],
       "fixed": [],

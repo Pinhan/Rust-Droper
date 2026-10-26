@@ -193,4 +193,46 @@ public class TwitchCampaignDiscoveryTests
         Assert.Contains("lilshark4r", result.Warnings[0], StringComparison.Ordinal);
         Assert.Equal("Ignite Stage2 W4", Assert.Single(result.Campaigns).Name);
     }
+
+    private const string NoDrops = "{\"data\":{\"channel\":{\"id\":\"x\",\"viewerDropCampaigns\":[],\"__typename\":\"Channel\"}}}";
+
+    [Fact]
+    public async Task Discover_ChannelsWithoutDrops_AreSkipped_AndLaterChannelsAreProbed()
+    {
+        // Gerçek gözlem (2026-10-26): "Drops Enabled" dizininde ilk 30 kanaldan yalnız 1'i etkinlik kampanyasını taşıyordu.
+        // jay3 ve lilshark4r kampanyasız; üçüncü kanal (bogur) kampanyayı taşır → keşif durmadan ona ulaşmalı.
+        var handler = new StubHandler(r => Route(r, id => id == "133220545" || id == "1362574163" ? Json(HttpStatusCode.OK, NoDrops) : null));
+
+        var result = await Discovery(handler).DiscoverAsync("marvel-rivals", channelsToProbe: 3);
+
+        var campaign = Assert.Single(result.Campaigns);
+        Assert.Equal("Ignite Stage2 W4", campaign.Name);
+        Assert.Equal(["bogur"], result.ChannelsByCampaign[campaign.Id].Select(c => c.Login));
+        Assert.Equal(4, handler.Requests.Count);
+    }
+
+    [Fact]
+    public async Task Discover_StopsProbing_OnceEnoughEligibleChannelsAreFound()
+    {
+        var handler = new StubHandler(r => Route(r));
+
+        var result = await Discovery(handler).DiscoverAsync("marvel-rivals", channelsToProbe: 3, stopAfterEligible: 1);
+
+        Assert.Single(result.ChannelsByCampaign.Values.SelectMany(l => l));
+        Assert.Equal(2, handler.Requests.Count); // 1 dizin + 1 kanal
+    }
+
+    [Fact]
+    public async Task Discover_KnownEligibleChannels_AreProbedFirst()
+    {
+        var handler = new StubHandler(r => Route(r, id => id == "133220545" || id == "1362574163" ? Json(HttpStatusCode.OK, NoDrops) : null));
+        var directory = new StubHandler(r => Route(r));
+        var all = await Discovery(directory).DiscoverAsync("marvel-rivals", channelsToProbe: 3);
+        var bogurId = all.Channels.Single(c => c.Login == "bogur").Id;
+
+        var result = await Discovery(handler).DiscoverAsync("marvel-rivals", channelsToProbe: 3, stopAfterEligible: 1, knownEligibleChannelIds: [bogurId]);
+
+        Assert.Equal("bogur", Assert.Single(result.ChannelsByCampaign.Values.SelectMany(l => l)).Login);
+        Assert.Equal(2, handler.Requests.Count); // bilinen kanal ilk sorgulandı, yeterli → durdu
+    }
 }

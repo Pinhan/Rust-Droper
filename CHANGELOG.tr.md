@@ -4,6 +4,19 @@ Rust Droper'daki tüm önemli değişiklikler burada, en yeniden eskiye listelen
 
 > Bu dosya `src/RustDroper.App/Resources/changelog.json` içinden üretilir (`powershell -File build\changelog.ps1`). Elle düzenlemeyin. İngilizce sürüm: [CHANGELOG.md](CHANGELOG.md).
 
+## [1.0.1] — 2026-10-26 · PATCH · Hata düzeltme / Kampanya keşfi
+
+Etkinlik başladığında uygulamanın 'Boşta' kalmasına yol açan kampanya keşfi hatası düzeltildi: drop'u olan yayınlar artık yayın listesinde daha derin aranıyor.
+
+### Değişenler
+
+- Keşif, 'Drops Enabled' yayın listesinin ilk birkaç kanalıyla yetinmiyor; drop'u olan yeterli kanal bulunana dek (en çok 100 kanal) tarıyor ve bulunan kanalları sonraki taramada önce kontrol ediyor
+- Kampanya kapsamı (genel/yayıncı) artık yalnızca drop'u olan kanallara göre belirleniyor
+
+### Düzeltilenler
+
+- Etkinlik başlamış olduğu halde uygulama 'Boşta' kalıp hiçbir yayını izlemiyordu; çünkü etkinlik kampanyasını taşıyan kanallar yayın listesinde ilk sıralarda değildi
+
 ## [1.0.0] — 2026-10-20 · BASELINE · İlk sürüm
 
 Rust Droper'ın ilk kararlı sürümü ve bundan sonraki tüm sürümlerin referansı (baseline). Rust oyununun Twitch ve Kick drop'larını arka planda toplar.

@@ -32,9 +32,9 @@ public sealed class TwitchCampaignDiscovery
         _logger = logger ?? NullLogger.Instance;
     }
 
-    public static Dictionary<string, object?> DirectoryVariables(string gameSlug) => new()
+    public static Dictionary<string, object?> DirectoryVariables(string gameSlug, int limit = 30) => new()
     {
-        ["limit"] = 30,
+        ["limit"] = Math.Clamp(limit, 1, 100),
         ["slug"] = gameSlug,
         ["imageWidth"] = 50,
         ["includeCostreaming"] = false,
@@ -52,23 +52,44 @@ public sealed class TwitchCampaignDiscovery
         },
     };
 
-    public async Task<TwitchDiscovery> DiscoverAsync(string gameSlug, int channelsToProbe = 5, CancellationToken cancellationToken = default)
+    /// <param name="channelsToProbe">En çok kaç kanalın <c>AvailableDrops</c>'ı sorgulanır (dizin sayfası da buna göre 30–100).</param>
+    /// <param name="stopAfterEligible">Drop'u olan bu kadar kanal bulununca sorgulama durur (çoğu "Drops Enabled" yayında kampanya YOKTUR: etiket yalnız belirli
+    /// kampanyalara katılan kanallarda ya da site genelindeki bir kampanya yüzünden olabilir; bu yüzden ilk birkaç kanala bakmak yetmez).</param>
+    /// <param name="knownEligibleChannelIds">Önceki keşifte drop'lu bulunan kanallar: önce bunlar yeniden doğrulanır (ucuz), sonra kalan kanallara bakılır.</param>
+    public async Task<TwitchDiscovery> DiscoverAsync(
+        string gameSlug,
+        int channelsToProbe = 5,
+        CancellationToken cancellationToken = default,
+        int stopAfterEligible = 8,
+        IReadOnlyCollection<string>? knownEligibleChannelIds = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(gameSlug);
         ArgumentOutOfRangeException.ThrowIfLessThan(channelsToProbe, 1);
 
         IReadOnlyList<LiveChannel> channels;
-        using (var directory = await _gql.ExecuteAsync(GqlOperations.GameDirectory, DirectoryVariables(gameSlug), cancellationToken).ConfigureAwait(false))
+        using (var directory = await _gql.ExecuteAsync(GqlOperations.GameDirectory, DirectoryVariables(gameSlug, Math.Max(30, channelsToProbe)), cancellationToken).ConfigureAwait(false))
         {
             channels = TwitchDirectoryParser.Parse(directory.Data);
+        }
+
+        if (knownEligibleChannelIds is { Count: > 0 })
+        {
+            // Daha önce drop'lu bulunanlar listenin başına (dizinde hâlâ canlıysa); sıra korunur.
+            channels = [.. channels.OrderBy(c => knownEligibleChannelIds.Contains(c.Id) ? 0 : 1)];
         }
 
         var campaigns = new Dictionary<string, Campaign>(StringComparer.Ordinal);
         var seen = new Dictionary<string, List<LiveChannel>>(StringComparer.Ordinal);
         var warnings = new List<string>();
 
+        var participating = 0; // kampanya döndüren (drop'u olan) kanal sayısı
         foreach (var channel in channels.Take(channelsToProbe))
         {
+            if (participating >= stopAfterEligible)
+            {
+                break;
+            }
+
             try
             {
                 using var available = await _gql.ExecuteAsync(
@@ -76,6 +97,10 @@ public sealed class TwitchCampaignDiscovery
                     new Dictionary<string, object?> { ["channelID"] = channel.Id },
                     cancellationToken).ConfigureAwait(false);
                 var parsed = TwitchAvailableDropsParser.Parse(available.Data);
+                if (parsed.Campaigns.Count > 0)
+                {
+                    participating++;
+                }
 
                 foreach (var campaign in parsed.Campaigns)
                 {
@@ -98,9 +123,9 @@ public sealed class TwitchCampaignDiscovery
         // Kapsam sezgisi [Ç]: kampanya, sorgulanan kanalların en az yarısında (ve ≥2'sinde) görülüyorsa genel; aksi halde
         // görüldüğü kanallara özel (ACL) varsayılır. Canlı gözlem: "Ignite" 3/5 kanalda (genel), "Season 10.5" 2/5 (kanala özgü).
         // İzleme kararı kapsama değil ChannelsByCampaign'e dayanır; kapsam yalnızca etikettir.
-        var probed = Math.Min(channelsToProbe, channels.Count);
+        // Payda: drop'u olan (kampanya döndüren) kanallar; drop'suz kanallar kapsamı bozmasın.
         var finalCampaigns = campaigns.Values
-            .Select(c => seen[c.Id].Count >= 2 && seen[c.Id].Count * 2 >= probed
+            .Select(c => seen[c.Id].Count >= 2 && seen[c.Id].Count * 2 >= participating
                 ? c with { Scope = CampaignScope.General }
                 : c with
                 {
