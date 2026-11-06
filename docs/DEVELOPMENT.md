@@ -70,6 +70,9 @@ Design decisions and measurements: [02-mimari.md](02-mimari.md) (Turkish). Platf
 - Server counter advances in 2-unit steps about every 2 min. Kick auto-claim has **never been verified live**.
 - Cloudflare blocks unusual clients: keep the browser-like User-Agent / HTTP versions as in `KickConstants`; non-JSON 403 = block/transient (token is kept), JSON 403 = invalid token.
 
+**Tests**
+- Some tests use the **real clock** against fixture campaigns with fixed dates. They break when the calendar passes those dates even though the code is fine (happened on 2026-11-06: Kick fixtures ended 2026-10-30, fixed by moving them to 2036). If CI turns red with no code change, check fixture dates first and give fixtures far-future end dates or a `FakeTimeProvider`.
+
 **App / Windows**
 - Window close destroys the window and trims memory (tray memory ≈ 55–65 MB). WPF is forced to software rendering (`SoftwareOnly`) because hardware rendering leaked a few MB per open/close. Do not re-enable casually.
 - Shared `SolidColorBrush` resources get frozen by templates → animating a brush colour throws or does nothing; replace the brush instead.

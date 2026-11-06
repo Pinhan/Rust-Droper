@@ -70,6 +70,9 @@ Tasarım kararları ve ölçümler: [02-mimari.md](02-mimari.md). Platform davra
 - Sunucu sayacı yaklaşık 2 dakikada bir 2'şer birim artar. Kick otomatik claim'i canlıda **hiç doğrulanmadı**.
 - Cloudflare alışılmadık istemcileri engeller: `KickConstants`'taki tarayıcı benzeri User-Agent / HTTP sürümlerini koru; JSON olmayan 403 = engel/geçici (token korunur), JSON'lu 403 = geçersiz token.
 
+**Testler**
+- Bazı testler sabit tarihli örnek (fixture) kampanyalara karşı **gerçek saati** kullanır. Takvim o tarihleri geçince kod sağlam olsa bile test kırılır (2026-11-06'da oldu: Kick örnekleri 2026-10-30'da bitiyordu, 2036'ya çekilerek düzeltildi). Kod değişmeden CI kırmızıya dönerse önce örnek tarihlerine bak; örneklere çok ileri bitiş tarihi ver ya da `FakeTimeProvider` kullan.
+
 **Uygulama / Windows**
 - Pencere kapanınca pencere yok edilir ve bellek kırpılır (tepside ≈ 55–65 MB). WPF bilerek yazılım çizimine (`SoftwareOnly`) alınmıştır; donanım çizimi her aç/kapa'da birkaç MB sızdırıyordu. Düşünmeden geri açma.
 - Paylaşılan `SolidColorBrush` kaynakları şablonlarca dondurulur → fırça rengini animasyonla değiştirmek hata verir ya da etkisiz kalır; fırçayı yenisiyle değiştir.

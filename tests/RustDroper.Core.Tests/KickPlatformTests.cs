@@ -47,16 +47,16 @@ internal sealed class FakeKickServer
 
     public static string CampaignsJson => $$$"""
         {"data":[
-          {"id":"{{{RustStreamerCampaign}}}","name":"Streamer Drop","status":"active","starts_at":"2026-10-15T16:00:00Z","ends_at":"2026-10-30T21:00:00Z",
+          {"id":"{{{RustStreamerCampaign}}}","name":"Streamer Drop","status":"active","starts_at":"2026-10-15T16:00:00Z","ends_at":"2036-10-30T21:00:00Z",
            "category":{"id":13,"slug":"rust","name":"Rust"},
            "channels":[{"id":"100001","slug":"rustfan_one","user":{"username":"RustFan_One"}},{"id":"100004","slug":"rustfan_four","user":{"username":"RustFan_Four"}}],
            "rewards":[{"id":"R_S1","name":"Emote","required_units":240}],"connect_url":""},
-          {"id":"{{{RustGeneralCampaign}}}","name":"General Drops","status":"active","starts_at":"2026-10-15T16:00:00Z","ends_at":"2026-10-30T21:00:00Z",
+          {"id":"{{{RustGeneralCampaign}}}","name":"General Drops","status":"active","starts_at":"2026-10-15T16:00:00Z","ends_at":"2036-10-30T21:00:00Z",
            "category":{"id":13,"slug":"rust","name":"Rust"},"channels":[],
            "rewards":[{"id":"R_G3","name":"Three","required_units":360},{"id":"R_G1","name":"One","required_units":120},{"id":"R_G2","name":"Two","required_units":240}]},
           {"id":"C_OLD","name":"Old Rust","status":"expired","starts_at":"2026-06-11T00:00:00Z","ends_at":"2026-06-21T00:00:00Z",
            "category":{"id":13,"slug":"rust","name":"Rust"},"channels":[],"rewards":[{"id":"R_O1","required_units":120}]},
-          {"id":"C_MC","name":"Minecraft","status":"active","starts_at":"2026-10-01T00:00:00Z","ends_at":"2026-10-30T00:00:00Z",
+          {"id":"C_MC","name":"Minecraft","status":"active","starts_at":"2026-10-01T00:00:00Z","ends_at":"2036-10-30T00:00:00Z",
            "category":{"id":10,"slug":"minecraft","name":"Minecraft"},"channels":[],"rewards":[{"id":"R_M1","required_units":60}]}
         ]}
         """;
