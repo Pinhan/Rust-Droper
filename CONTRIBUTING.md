@@ -4,6 +4,8 @@
 
 ## English
 
+> Working on the code (human or AI)? Read [AGENTS.md](AGENTS.md) and [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) first.
+
 Thanks for your interest! Rust Droper is a small, best-effort hobby project, so please keep changes focused.
 
 1. **Open an issue first** (bug report or feature request) and wait for a reply before spending time on a pull request. Bugs: use the *Bug report* template (version, Windows version, steps, log lines — **never paste passwords, tokens, cookies or your sign-in files**). Security problems: see [SECURITY.md](SECURITY.md), not a public issue.
@@ -20,6 +22,8 @@ Thanks for your interest! Rust Droper is a small, best-effort hobby project, so 
 7. Be kind: see the [Code of Conduct](CODE_OF_CONDUCT.md). Contributions are licensed under the [MIT License](LICENSE).
 
 ## Türkçe
+
+> Kod üzerinde mi çalışıyorsun (insan ya da yapay zekâ)? Önce [AGENTS.md](AGENTS.md) ve [docs/DEVELOPMENT.tr.md](docs/DEVELOPMENT.tr.md) dosyalarını oku.
 
 İlgin için teşekkürler! Rust Droper küçük, "elinden geldiğince" ilerleyen bir hobi projesidir; lütfen değişiklikleri odaklı tut.
 

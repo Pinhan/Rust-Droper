@@ -4,6 +4,7 @@
 |---|---|---|
 | [USAGE.md](USAGE.md) / [USAGE.tr.md](USAGE.tr.md) | EN / TR | User guide / Kullanım kılavuzu |
 | [PLATFORM-NOTES.md](PLATFORM-NOTES.md) / [PLATFORM-NOTES.tr.md](PLATFORM-NOTES.tr.md) | EN / TR | How Twitch/Kick/Facepunch drops behave (observations) / Platform davranışı |
+| [DEVELOPMENT.md](DEVELOPMENT.md) / [DEVELOPMENT.tr.md](DEVELOPMENT.tr.md) | EN / TR | **Start here for development:** code map, known traps, verified vs not / Geliştirme için buradan başla |
 | [02-mimari.md](02-mimari.md) | TR | Architecture and design decisions / Mimari ve tasarım kararları |
 | [04-kick-risk-arastirmasi.md](04-kick-risk-arastirmasi.md) | TR | Kick automation-risk research / Kick otomasyon riski araştırması |
 | [05-arayuz-tasarimi.md](05-arayuz-tasarimi.md) | TR | UI design / Arayüz tasarımı |

@@ -105,6 +105,8 @@ Notlar: *canlı* testler yalnızca `RUSTDROPER_LIVE=1` ile çalışır ve gerçe
 
 ## Katkı ve destek
 
+**Geliştiriciler ve yapay zekâ asistanları:** [AGENTS.md](AGENTS.md) ve [docs/DEVELOPMENT.tr.md](docs/DEVELOPMENT.tr.md) ile başlayın (kod haritası, bilinen tuzaklar, neyin doğrulandığı/doğrulanmadığı).
+
 Destek **elinden geldiğince (best-effort)**dir: bu bir hobi projesidir, yanıt süresi garantisi yoktur. Lütfen [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun (önce issue açın; kullanıcıya yansıyan her değişiklik için Türkçe + İngilizce changelog girişi ve Semantic Versioning artışı gerekir — bkz. [docs/08](docs/08-surum-ve-degisiklik-kaydi.md)). Güvenlik sorunları: [SECURITY.md](SECURITY.md). İletişim: thepinhan@gmail.com (tercihen GitHub Issues).
 
 ## Lisans

@@ -105,6 +105,8 @@ Notes: tests marked *live* only run with `RUSTDROPER_LIVE=1` and need real netwo
 
 ## Contributing & support
 
+**Developers and AI assistants:** start with [AGENTS.md](AGENTS.md) and [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) (code map, known traps, what is verified vs not).
+
 Support is **best-effort**: this is a hobby project, there is no guarantee of response time. Please read [CONTRIBUTING.md](CONTRIBUTING.md) (open an issue first; every user-visible change needs a Turkish + English changelog entry and a Semantic Versioning bump — see [docs/08](docs/08-surum-ve-degisiklik-kaydi.md)). Security issues: see [SECURITY.md](SECURITY.md). Contact: thepinhan@gmail.com (GitHub Issues preferred).
 
 ## License
