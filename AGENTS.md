@@ -22,6 +22,13 @@ Close a running `RustDroper.exe` before building. Use a throw-away `RUSTDROPER_D
 5. Change one thing at a time in engine/watching code (time-based tests); run the whole suite.
 6. Commit/push/tag only when the user asks. Releases: tag `vX.Y.Z` after CI is green; the workflow publishes the zip.
 
+## Notes for AI assistants (tooling quirks learned the hard way)
+
+- The user speaks **Turkish**; wants small, finished steps (build + tests green) and no half-done work. Ask before anything outward-facing (push, tag, release, publishing).
+- A sandboxed shell may **not see the real user session**: files you write under `%LOCALAPPDATA%` are not visible to the real app or to Task Scheduler, and the reverse. Do not claim that crash-restart, the scheduled task, autostart or real signed-in data work because a sandbox test passed; give the user a short manual check instead.
+- On Windows shells, long heredocs containing `'` or `\` get mangled. Create multi-line files with the editor/write tool (or a script file), not inline heredocs. A `cd` in a shell session persists: use absolute paths.
+- The tray app locks its own exe/DLLs: close `RustDroper.exe` before building or publishing.
+
 ## Where bugs will most likely come from
 
 Platform changes, not code rot: Twitch GraphQL persisted-query hashes (`TwitchGqlTypes.cs`), Twitch campaign discovery (channel-based, scans up to 100 channels), Kick endpoints / Cloudflare / player page, Facepunch page layout. Diagnose with the CLI first, e.g. `dotnet run --project src/RustDroper.Cli -- campaigns twitch rust --probe 100`, then fix and add a test.

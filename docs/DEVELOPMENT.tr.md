@@ -46,7 +46,7 @@ Tasarım kararları ve ölçümler: [02-mimari.md](02-mimari.md). Platform davra
 
 ## 4. Uyman gereken kurallar (birçoğunu testler zorlar)
 
-1. **İki dil.** Kullanıcıya görünen her metin **Türkçe + İngilizce birlikte** eklenir/değiştirilir/silinir (`Loc` tabloları). Testler iki dilin varlığını, yer tutucu sayısı eşitliğini ve İngilizce metinde Türkçe harf olmamasını denetler. Belgeler: `USAGE.md` + `USAGE.tr.md`, `README.md` + `README.tr.md`, `CHANGELOG.md` + `CHANGELOG.tr.md`.
+1. **İki dil.** Kullanıcıya görünen her metin **Türkçe + İngilizce birlikte** eklenir/değiştirilir/silinir (`Loc` tabloları). Metin eklemek için: kodda `Loc.T("anahtar", args)` ya da XAML'de `{loc:Loc anahtar}` ve `CoreStrings.*.cs` (Core) / `AppStrings.*.cs` (App) içine bir `(anahtar, Türkçe, English)` satırı; anahtarı asla dize birleştirmeyle üretme. Ayrıntı: [02-mimari.md](02-mimari.md) §4.8. Testler iki dilin varlığını, yer tutucu sayısı eşitliğini ve İngilizce metinde Türkçe harf olmamasını denetler. Belgeler: `USAGE.md` + `USAGE.tr.md`, `README.md` + `README.tr.md`, `CHANGELOG.md` + `CHANGELOG.tr.md`.
 2. **Kullanıcıya yansıyan her değişiklik için sürüm + değişiklik kaydı** ([08-surum-ve-degisiklik-kaydi.md](08-surum-ve-degisiklik-kaydi.md)): `changelog.json`'a TR+EN giriş ekle, `Directory.Build.props` içindeki `<Version>`'ı artır (MAJOR = mimari / geriye uyumsuz, MINOR = yeni özellik/sayfa/modül, PATCH = hata, CSS, performans, güvenlik, metin, küçük UX), `build\changelog.ps1` çalıştır. Unutursan `ChangelogRulesTests` başarısız olur.
 3. **Sırlar:** token/parola/çerezi asla günlüğe yazma, ekrana basma, commit'leme. Belirteçler DPAPI ile şifreli `secrets.dat` içindedir. Uygulama hiçbir parola görmez (Twitch cihaz-kodu girişi, Kick telefon QR'ı, Kick oynatıcı girişi için görünür WebView2 penceresi). Testler gerçek hesap kullanmaz.
 4. **Uyarılar hatadır.** Yeşil olsun diye uyarı bastırma, test atlama/silme yapma.
@@ -111,4 +111,4 @@ Canlıda (gerçek hesap) doğrulandı: Twitch girişi, envanter, keşif, HLS ile
 3. `vX.Y.Z` etiketi (`<Version>` ile aynı) oluşturup etiketi it: `release` iş akışı derler, test eder, `build\package-release.ps1` çalıştırır ve `RustDroper-X.Y.Z-win-x64.zip` + `SHA256SUMS.txt` dosyalarını GitHub Releases'a koyar.
 4. Kullanıcılar zip'i **Releases** sayfasından indirmeli, "Code → Download ZIP"ten değil (onda exe yok).
 
-`build\yayin-commit.ps1` ve `build\yayin-tara.ps1` ilk herkese açık commit için kullanılan tek seferlik yardımcılardı; gerek yok.
+`docs/screenshots` içindeki görüntüler `powershell -File build\ui-screens.ps1 -Exe <RustDroper.exe> -OutDir <klasör> -Language tr|en` ile üretilir (geçici veri klasörü kullanır, gerçek veriye dokunmaz). İlk geliştiricinin diğer yardımcı betikleri (bellek ölçümü, canlı sınama başlatıcıları) bu depoda **yoktur**; gerekirse yeniden yaz — ölçülen hedefler [02-mimari.md](02-mimari.md) §2'dedir.

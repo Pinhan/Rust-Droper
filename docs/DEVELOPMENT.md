@@ -46,7 +46,7 @@ Design decisions and measurements: [02-mimari.md](02-mimari.md) (Turkish). Platf
 
 ## 4. Rules you must follow (tests enforce several)
 
-1. **Two languages.** Every user-visible string is added/changed/removed in **Turkish and English together** (`Loc` tables). Tests check that both exist, placeholder counts match and the English text contains no Turkish letters. Docs: `USAGE.md` + `USAGE.tr.md`, `README.md` + `README.tr.md`, `CHANGELOG.md` + `CHANGELOG.tr.md`.
+1. **Two languages.** Every user-visible string is added/changed/removed in **Turkish and English together** (`Loc` tables). To add a string: `Loc.T("key", args)` in code or `{loc:Loc key}` in XAML, plus one `(key, Türkçe, English)` row in `CoreStrings.*.cs` (Core) or `AppStrings.*.cs` (App); never build keys by string concatenation. Details: [02-mimari.md](02-mimari.md) §4.8. Tests check that both exist, placeholder counts match and the English text contains no Turkish letters. Docs: `USAGE.md` + `USAGE.tr.md`, `README.md` + `README.tr.md`, `CHANGELOG.md` + `CHANGELOG.tr.md`.
 2. **Version + changelog for every user-facing change** ([08-surum-ve-degisiklik-kaydi.md](08-surum-ve-degisiklik-kaydi.md)): add a TR+EN entry to `changelog.json`, bump `<Version>` in `Directory.Build.props` (MAJOR = architecture / breaking, MINOR = new feature/page/module, PATCH = bug, CSS, performance, security, text, small UX), run `build\changelog.ps1`. `ChangelogRulesTests` fails if you forget.
 3. **Secrets:** never log, print or commit tokens/passwords/cookies. Tokens live DPAPI-encrypted in `secrets.dat`. The app never receives a password (device-code login for Twitch, phone QR for Kick, a visible WebView2 window for the Kick player login). Tests must not use real accounts.
 4. **Warnings are errors.** Do not suppress warnings or skip/delete tests to get green.
@@ -111,4 +111,4 @@ Verified live (real accounts): Twitch login, inventory, discovery, HLS progress,
 3. Tag `vX.Y.Z` (same as `<Version>`) and push the tag: the `release` workflow builds, tests, runs `build\package-release.ps1` and publishes `RustDroper-X.Y.Z-win-x64.zip` + `SHA256SUMS.txt` to GitHub Releases.
 4. Users must download the zip from **Releases**, not "Code → Download ZIP" (that has no exe).
 
-`build\yayin-commit.ps1` and `build\yayin-tara.ps1` were one-off helpers for the very first public commit; you do not need them.
+Screenshots in `docs/screenshots` come from `powershell -File build\ui-screens.ps1 -Exe <RustDroper.exe> -OutDir <folder> -Language tr|en` (uses a throw-away data folder, never real data). A few other helper scripts of the original maintainer (memory measurement, live-test launchers) are **not** in this repository; rewrite them if you need them — the measured targets are in [02-mimari.md](02-mimari.md) §2.
